@@ -1,0 +1,176 @@
+@import "variables";
+@import "bases";
+@import "media-queries";
+
+/*====== Main ======*/
+.main {
+  width: 100%;
+  min-height: 95vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    width: 32.7rem;
+    height: 54.3rem;
+    border-radius: 1.5rem;
+    padding: 2.4rem;
+    background-color: var(--card-bg);
+    box-shadow: 0 2.5rem 5rem rgba(0, 0, 0, 0.0952917);
+
+    .nft__img {
+      width: 27.8rem;
+      height: 27.8rem;
+      margin-bottom: 2.4rem;
+      position: relative;
+
+      img {
+        border-radius: 0.8rem;
+      }
+
+      &::before {
+        color: white;
+        content: url("../images/icon-view.svg");
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.8rem;
+        mix-blend-mode: normal;
+        background-color: var(--cyan);
+        cursor: pointer;
+      }
+
+      &:hover::before {
+        opacity: 0.7;
+      }
+
+      @include md {
+        width: 30.2rem;
+        height: 30.2rem;
+      }
+    }
+
+    .nft__infos {
+      .title {
+        display: block;
+        color: var(--white);
+        margin-bottom: 1.2rem;
+        transition: 0.3s;
+
+        h1 {
+          font-size: 2.2rem;
+          font-weight: 600;
+          line-height: 2.8rem;
+        }
+
+        &:hover {
+          color: var(--cyan);
+        }
+
+        @include md {
+          margin-bottom: 1.6rem;
+        }
+      }
+
+      .nft__description {
+        font-weight: 300;
+        line-height: 2.6rem;
+        margin-bottom: 1.6rem;
+
+        @include md {
+          margin-bottom: 2.4rem;
+        }
+      }
+
+      .nft__pricing {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.6rem;
+
+        .price,
+        .clock {
+          display: flex;
+          align-items: center;
+          font-size: 1.5rem;
+          line-height: 1.9rem;
+
+          img {
+            margin-right: 0.7rem;
+          }
+
+          @include md {
+            font-size: 1.6rem;
+            line-height: 2rem;
+          }
+        }
+
+        .price {
+          color: var(--cyan);
+          font-weight: 600;
+        }
+
+        @include md {
+          margin-bottom: 2.4rem;
+        }
+      }
+
+      hr {
+        margin-bottom: 1.6rem;
+        background-color: var(--line-color);
+      }
+
+      .nft__creator {
+        display: flex;
+        align-items: center;
+        column-gap: 1.6rem;
+
+        img {
+          width: 3.3rem;
+          height: 3.3rem;
+          border: 0.1rem solid var(--white);
+          border-radius: 50%;
+        }
+
+        p {
+          font-size: 1.5rem;
+          line-height: 1.9rem;
+
+          a {
+            color: var(--white);
+            transition: 0.3s;
+            &:hover {
+              color: var(--cyan);
+            }
+          }
+
+          @include md {
+            font-size: 1.6rem;
+            line-height: 2rem;
+          }
+        }
+      }
+    }
+
+    @include md {
+      width: 35rem;
+      height: 59.6rem;
+      padding: 2.4rem 2.4rem 3.2rem;
+    }
+  }
+}
+
+/*====== Footer ======*/
+.footer {
+  font-size: 1.2rem;
+  text-align: center;
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
